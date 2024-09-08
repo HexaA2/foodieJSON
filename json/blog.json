@@ -43,11 +43,11 @@
         "authorImage": "/images/dorisWang.jpg",
         "date": "2024-08-20",
         "text": [
-            "The Wendy's Frosty has long been a beloved staple, offering a perfect balance of creamy, chocolatey sweetness that complements any meal—or stands on its own as a delightful dessert. With its unique, thick texture, somewhere between a milkshake and soft-serve ice cream, the Frosty delivers a smooth and satisfying treat with every spoonful.",
+            "The Wendy's Frosty has long been a beloved staple, offering a perfect balance of creamy, chocolatey sweetness that complements any meal\u00e2\u20ac\u201dor stands on its own as a delightful dessert. With its unique, thick texture, somewhere between a milkshake and soft-serve ice cream, the Frosty delivers a smooth and satisfying treat with every spoonful.",
             "Available in both chocolate and vanilla, this frozen dessert is refreshing on a hot day or a comforting end to any meal. It's a nostalgic favorite for many, and whether you enjoy it solo or as a dip for your fries, the Wendy's Frosty continues to be a timeless, cool treat that never goes out of style."
         ]
     },
-    { 
+    {
         "id": 5,
         "title": "To Infinity and Beyond Burger: Why? Because We Can",
         "image": "/images/userBlogs/beyondBurger.png",
@@ -55,12 +55,23 @@
         "authorImage": "/images/andrewZhao.jpg",
         "date": "2024-09-08",
         "text": [
-            "In recent years, the world of food has undergone a massive shift. As people become more conscious of their health, the environment, and animal welfare, plant-based diets have surged in popularity. One of the most exciting developments in this space is the rise of Beyond Burgers—delicious, meat-like burgers made entirely from plants.",
+            "In recent years, the world of food has undergone a massive shift. As people become more conscious of their health, the environment, and animal welfare, plant-based diets have surged in popularity. One of the most exciting developments in this space is the rise of Beyond Burgers\u00e2\u20ac\u201ddelicious, meat-like burgers made entirely from plants.",
             "You may be asking yourself, What is a Beyond Burger? A Beyond Burger is a plant-based burger designed to replicate the taste, texture, and overall experience of eating a traditional beef burger. Unlike older veggie patties that are often made from beans or vegetables, the Beyond Burger is crafted using pea protein, coconut oil, and other plant-based ingredients to create a patty that looks, cooks, and even \"bleeds\" like meat, thanks to beet juice extract. In my experience, they taste pretty good and have a satisfying, meat-like texture.",
             "There are several compelling reasons to try a Beyond Burger. First, they offer notable health benefits. With 20 grams of protein per patty, Beyond Burgers pack a nutritional punch, nearly the same amount as a traditional beef burger. However, they have less saturated fat, making them a healthier option for your heart. They're also free of cholesterol, which is great for people looking to manage or reduce their cholesterol levels. If you're keeping an eye on your calorie intake, you'll be happy to know that Beyond Burgers generally have fewer calories than beef patties without sacrificing taste.",
             "For vegetarians and vegans, Beyond Burgers are a fantastic option, providing the texture and flavor of meat without any animal products. Whether you're transitioning to a plant-based diet or simply want to reduce your meat intake, Beyond Burgers offer a remarkably authentic experience. You can enjoy the burger-like taste you miss, but in a way that aligns with a plant-based lifestyle. They allow you to indulge in the savory satisfaction of a burger without compromising on your dietary choices.",
             "Beyond Burgers are also better for the environment. Producing plant-based meat requires far less water, land, and energy compared to traditional beef production, and generates fewer greenhouse gases. If you're concerned about your environmental footprint, swapping a beef burger for a Beyond Burger is a simple but impactful step toward a more sustainable lifestyle. Plus, by choosing plant-based options, you're helping reduce the demand for industrial meat production, which is often linked to poor animal welfare conditions. In doing so, you're supporting a more humane approach to food production.",
-            "In conclusion, whether you're looking to make a healthier choice, reduce your environmental impact, or explore meat alternatives as a vegetarian or vegan, the Beyond Burger is an excellent option. It’s a delicious, nutritious, and sustainable choice that doesn’t compromise on flavor or experience."
+            "In conclusion, whether you're looking to make a healthier choice, reduce your environmental impact, or explore meat alternatives as a vegetarian or vegan, the Beyond Burger is an excellent option. It\u00e2\u20ac\u2122s a delicious, nutritious, and sustainable choice that doesn\u00e2\u20ac\u2122t compromise on flavor or experience."
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Food",
+        "image": "/images/userBlogs/beyondBurger.png",
+        "author": "Tony Song",
+        "authorImage": "/images/tonySong.jpg",
+        "date": "2024-09-08",
+        "text": [
+            "Hi"
         ]
     }
 ]

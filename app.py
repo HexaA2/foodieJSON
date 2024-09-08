@@ -117,6 +117,42 @@ def foodForm():
 
     with open("json/foodData.json", 'w') as file:
         json.dump(data, file, indent=4)
+
+from datetime import datetime
+
+def blogForm():
+    print("You have selected the blog form.")
+    title = input("Title > ")
+    image = input("Name of image file (with file extension) > ")
+    author = input("Author Name > ")
+    authorImage = "/images/" + input("Author (camelcase) > ") + ".jpg"
+    date = datetime.now().date().strftime('%Y-%m-%d')
+
+    print("Moving onto text.")
+    text = []
+    while True:
+        more = input("Would you like to add more pargraphs? (y/n) > ")
+        if more=="n":
+            break
+        content = input("Paragraph Content > ")
+        text.append(content)
+
+    food_data = {
+        "id": get_next_id("json/blog.json"),
+        "title": title,
+        "image": "/images/userBlogs/" + image,
+        "author": author,
+        "authorImage": authorImage,
+        "date": date,
+        "text": text
+    }
+
+    with open("json/blog.json", 'r') as file:
+        data = json.load(file)
+    data.append(food_data)
+
+    with open("json/blog.json", 'w') as file:
+        json.dump(data, file, indent=4)
     
 
 userChoice = input("Which form would you like to submit? food, restaurant, or blog? > ").lower()
