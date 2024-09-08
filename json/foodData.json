@@ -1368,13 +1368,13 @@
         "group": "main",
         "reviews": [],
         "scores": {
-            "flavor": 80.0,
-            "balance": 70.0,
-            "intensity": 70.0,
-            "aftertaste": 70.0,
-            "texture": 80.0,
-            "appearance": 70.0,
-            "overallScore": 73.33333333333333
+            "flavor": 80,
+            "balance": 70,
+            "intensity": 70,
+            "aftertaste": 70,
+            "texture": 80,
+            "appearance": 70,
+            "overallScore": 73.3
         },
         "nutrition": {
             "Total Fat": "37g"
