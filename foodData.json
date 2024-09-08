@@ -662,7 +662,7 @@
         "price": 4.39,
         "restaurant": "Wendys",
         "image": "/restaurants/images/wendys/cheeseFries.png",
-        "group": "side",
+        "group": "main",
         "reviews": [
             {
                 "title": "Classic comfort",
