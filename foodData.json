@@ -6,7 +6,7 @@
         "price": 6.59,
         "image": "/restaurants/images/wendys/davesSingle.png",
         "restaurant": "Wendys",
-        "group": "side",
+        "group": "main",
         
         "reviews": [
             {
