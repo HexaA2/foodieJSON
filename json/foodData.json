@@ -1373,9 +1373,9 @@
             "intensity": 70,
             "aftertaste": 70,
             "texture": 80,
-            "appearance": 70,
-            "overallScore": 73.3
+            "appearance": 70            
         },
+        "overallScore": 73.3,
         "nutrition": {
             "Total Fat": "37g"
         },
