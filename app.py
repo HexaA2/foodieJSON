@@ -137,7 +137,7 @@ def blogForm():
         content = input("Paragraph Content > ")
         text.append(content)
 
-    food_data = {
+    blog_data = {
         "id": get_next_id("json/blog.json"),
         "title": title,
         "image": "/images/userBlogs/" + image,
@@ -149,9 +149,44 @@ def blogForm():
 
     with open("json/blog.json", 'r') as file:
         data = json.load(file)
-    data.append(food_data)
+    data.append(blog_data)
 
     with open("json/blog.json", 'w') as file:
+        json.dump(data, file, indent=4)
+
+
+def restaurantForm():
+    print("You have selected the restaurant form.")
+    id = input("id (all lowercase no punctuation or spaces) > ")
+    name = input("Name > ")
+    image = input("Name of image file (with file extension) > ")
+    background = input("Background Information > ")
+    highlights = []
+    count = 0
+    while count < 4:
+        more = input("Would you like to add a highlight? (y/n) > ")
+        if more=="n":
+            break
+        name = input("Name > ")
+        itemid = input("id of item > ")
+        image = input("Name of image file (with file extension) > ")
+        description = input("Description > ")
+        highlights.append({"name": name, "id": itemid, "image": "/restaurants/images/"+id+"/" + image, "description": description})
+        count +=1
+
+    rest_data = {
+        "id": id,
+        "name": name,
+        "image": "/images/" + image,
+        "background": background,
+        "highlights": highlights
+    }
+
+    with open("json/restaurants.json", 'r') as file:
+        data = json.load(file)
+    data.append(rest_data)
+
+    with open("json/restaurants.json", 'w') as file:
         json.dump(data, file, indent=4)
     
 

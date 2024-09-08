@@ -3,7 +3,7 @@
         "id": "wendys",
         "name": "Wendy's",
         "image": "/images/Wendys.png",
-        "background": "Wendy's is an American international fast food restaurant chain founded by Dave Thomas on November 15, 1969, in Columbus, Ohio. Its headquarters moved to Dublin, Ohio, on January 29, 2006. As of December 31, 2018, Wendy's was the world's third-largest hamburger fast-food chain with 6,711 locations, following McDonald’s and Burger King. On September 29, 2008, the company merged with Triarc Companies Inc., the publicly traded parent company of Arby's; Wendy's headquarters remained in Dublin. Triarc then became known as Wendy's/Arby's Group, and later as the Wendy's Company following the sale of Arby's to Roark Capital Group. As of November 2, 2023, there were 7,166 Wendy's outlets, of which 415 are company-owned and 6,751 franchised, 83% of which are in the United States. The company specifies stores' standards; owners control opening hours, decor, and staff uniforms and pay. The chain serves square hamburger patties on circular buns, sea salt fries, and the Frosty, soft ice cream mixed with starches. The food menu consists primarily of hamburgers, chicken sandwiches, and French fries. The company discontinued its Big Classic signature sandwich.",
+        "background": "Wendy's is an American international fast food restaurant chain founded by Dave Thomas on November 15, 1969, in Columbus, Ohio. Its headquarters moved to Dublin, Ohio, on January 29, 2006. As of December 31, 2018, Wendy's was the world's third-largest hamburger fast-food chain with 6,711 locations, following McDonald\u00e2\u20ac\u2122s and Burger King. On September 29, 2008, the company merged with Triarc Companies Inc., the publicly traded parent company of Arby's; Wendy's headquarters remained in Dublin. Triarc then became known as Wendy's/Arby's Group, and later as the Wendy's Company following the sale of Arby's to Roark Capital Group. As of November 2, 2023, there were 7,166 Wendy's outlets, of which 415 are company-owned and 6,751 franchised, 83% of which are in the United States. The company specifies stores' standards; owners control opening hours, decor, and staff uniforms and pay. The chain serves square hamburger patties on circular buns, sea salt fries, and the Frosty, soft ice cream mixed with starches. The food menu consists primarily of hamburgers, chicken sandwiches, and French fries. The company discontinued its Big Classic signature sandwich.",
         "highlights": [
             {
                 "name": "Dave's Single",
@@ -30,5 +30,12 @@
                 "description": "Natural-cut, skin-on, sea-salted fries topped with our hearty chili and rich, creamy cheese sauce. It's a side, it's a meal, it's a side that's a meal."
             }
         ]
+    },
+    {
+        "id": "burgerking",
+        "name": "Burger King",
+        "image": "/images/burgerking.png",
+        "background": "Burger King, founded in 1954 in Miami, Florida, is one of the world\u2019s leading fast-food chains, renowned for its flame-grilled burgers and iconic Whopper sandwich. Established by James McLamore and David Edgerton, the brand has grown from a small regional operation into a global phenomenon with thousands of locations across numerous countries. Known for its innovative approach to fast food, Burger King has consistently introduced unique menu items and promotions, catering to a diverse customer base. The company\u2019s commitment to quality and customer satisfaction, along with its distinct \"Have It Your Way\" slogan, has solidified its position as a major player in the fast-food industry.",
+        "highlights": []
     }
 ]
