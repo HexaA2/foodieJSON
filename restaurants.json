@@ -1,0 +1,34 @@
+[
+    {
+        "id": "wendys",
+        "name": "Wendy's",
+        "image": "/images/Wendys.png",
+        "background": "Wendy's is an American international fast food restaurant chain founded by Dave Thomas on November 15, 1969, in Columbus, Ohio. Its headquarters moved to Dublin, Ohio, on January 29, 2006. As of December 31, 2018, Wendy's was the world's third-largest hamburger fast-food chain with 6,711 locations, following McDonald’s and Burger King. On September 29, 2008, the company merged with Triarc Companies Inc., the publicly traded parent company of Arby's; Wendy's headquarters remained in Dublin. Triarc then became known as Wendy's/Arby's Group, and later as the Wendy's Company following the sale of Arby's to Roark Capital Group. As of November 2, 2023, there were 7,166 Wendy's outlets, of which 415 are company-owned and 6,751 franchised, 83% of which are in the United States. The company specifies stores' standards; owners control opening hours, decor, and staff uniforms and pay. The chain serves square hamburger patties on circular buns, sea salt fries, and the Frosty, soft ice cream mixed with starches. The food menu consists primarily of hamburgers, chicken sandwiches, and French fries. The company discontinued its Big Classic signature sandwich.",
+        "highlights": [
+            {
+                "name": "Dave's Single",
+                "id": 1,
+                "image": "/restaurants/images/wendys/davesSingle.png",
+                "description": "A quarter-pound of fresh, never frozen beef, American cheese, crisp lettuce, tomato, pickle, ketchup, mayo, and onion on a toasted bun, just the way Dave intended."
+            },
+            {
+                "name": "Dave's Double",
+                "id": 2,
+                "image": "/restaurants/images/wendys/davesDouble.png",
+                "description": "A half-pound of fresh, never frozen beef, American cheese, crisp lettuce, tomato, pickle, ketchup, mayo, and onion on a toasted bun, just the way Dave intended."
+            },
+            {
+                "name": "Baconator",
+                "id": 4,
+                "image": "/restaurants/images/wendys/baconator.png",
+                "description": "A half-pound of fresh, never frozen beef, American cheese, 6 pieces of crispy Applewood smoked bacon, ketchup, and mayo. Carnivores rejoice!"
+            },
+            {
+                "name": "Chili Cheese Fries",
+                "id": 7,
+                "image": "/restaurants/images/wendys/chiliCheeseFries.png",
+                "description": "Natural-cut, skin-on, sea-salted fries topped with our hearty chili and rich, creamy cheese sauce. It's a side, it's a meal, it's a side that's a meal."
+            }
+        ]
+    }
+]
