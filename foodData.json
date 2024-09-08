@@ -6,7 +6,7 @@
         "price": 6.59,
         "image": "/restaurants/images/wendys/davesSingle.png",
         "restaurant": "Wendys",
-        "group": "main",
+        "group": "side",
         
         "reviews": [
             {
@@ -662,7 +662,7 @@
         "price": 4.39,
         "restaurant": "Wendys",
         "image": "/restaurants/images/wendys/cheeseFries.png",
-        "group": "main",
+        "group": "side",
         "reviews": [
             {
                 "title": "Classic comfort",
