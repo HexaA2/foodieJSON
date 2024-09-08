@@ -7,7 +7,6 @@
         "image": "/restaurants/images/wendys/davesSingle.png",
         "restaurant": "Wendys",
         "group": "main",
-        
         "reviews": [
             {
                 "title": "Classic and satisfying",
@@ -225,7 +224,7 @@
         "reviews": [
             {
                 "title": "A Meat Lover's Dream",
-                "content": "Three beef patties, three slices of cheese – perfect for anyone who loves a hearty burger.",
+                "content": "Three beef patties, three slices of cheese \u00e2\u20ac\u201c perfect for anyone who loves a hearty burger.",
                 "author": "Sarah Liang",
                 "authorPhoto": "/images/sarahLiang.jpg"
             },
@@ -317,8 +316,7 @@
                 "details": "Onion"
             }
         ]
-    }
-    ,
+    },
     {
         "id": 4,
         "name": "Baconator",
@@ -654,7 +652,7 @@
                 "details": "Milk, Cream, Water, Sodium Citrate, Salt, Contains less than 2% of: Cheese Culture, Enzymes, Citric Acid, Annatto (Color). CONTAINS: MILK."
             }
         ]
-    },    
+    },
     {
         "id": 8,
         "name": "Cheese Fries",
@@ -729,7 +727,7 @@
                 "details": "Milk, Cream, Water, Sodium Citrate, Salt, Contains less than 2% of: Cheese Culture, Enzymes, Citric Acid, Annatto (Color). CONTAINS: MILK."
             }
         ]
-    },    
+    },
     {
         "id": 9,
         "name": "Blueberry Pomegranate Lemonade",
@@ -865,7 +863,7 @@
                 "details": "Flavor enhancers."
             }
         ]
-    },    
+    },
     {
         "id": 11,
         "name": "All-Natural Lemonade",
@@ -932,7 +930,7 @@
                 "details": "Flavor enhancers."
             }
         ]
-    },    
+    },
     {
         "id": 12,
         "name": "Strawberry Lemonade",
@@ -1359,6 +1357,39 @@
                 "details": "Flavoring."
             }
         ]
+    },
+    {
+        "id": 17,
+        "name": "Dave's Single",
+        "calories": "590",
+        "price": "6.59",
+        "image": "/restaurants/images/wendys/davesSingle.png",
+        "restaurant": "Wendys",
+        "group": "main",
+        "reviews": [],
+        "scores": {
+            "flavor": 80.0,
+            "balance": 70.0,
+            "intensity": 70.0,
+            "aftertaste": 70.0,
+            "texture": 80.0,
+            "appearance": 70.0,
+            "overallScore": 73.33333333333333
+        },
+        "nutrition": {
+            "Total Fat": "37g"
+        },
+        "allergens": [
+            {
+                "name": "Egg",
+                "icon": "/images/egg.svg"
+            }
+        ],
+        "ingredients": [
+            {
+                "name": "Patty",
+                "details": "Meat"
+            }
+        ]
     }
-    
 ]
