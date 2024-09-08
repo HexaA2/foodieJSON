@@ -1362,24 +1362,11 @@
         "id": 17,
         "name": "Dave's Single",
         "calories": "590",
-        "price": "6.59",
+        "price": 6.59,
         "image": "/restaurants/images/wendys/davesSingle.png",
         "restaurant": "Wendys",
         "group": "main",
-        "reviews": [
-            {
-                "title": "Classic and satisfying",
-                "content": "A well-balanced burger with juicy beef and fresh toppings.",
-                "author": "Tony Song",
-                "authorPhoto": "/images/tonySong.jpg"
-            },
-            {
-                "title": "Just okay",
-                "content": "The burger was decent but not extraordinary.",
-                "author": "Andrew Zhao",
-                "authorPhoto": "/images/andrewZhao.jpg"
-            }
-        ],
+        "reviews": [],
         "scores": {
             "flavor": 80,
             "balance": 70,
@@ -1388,7 +1375,7 @@
             "texture": 80,
             "appearance": 70            
         },
-        "overallScore": 73.3,
+        "overallScore": 73.3333333333333,
         "nutrition": {
             "Total Fat": "37g"
         },

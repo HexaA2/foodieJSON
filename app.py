@@ -92,7 +92,7 @@ def foodForm():
         "id": get_next_id("json/foodData.json"),
         "name": foodName,
         "calories": foodCal,
-        "price": foodPrice,
+        "price": float(foodPrice),
         "image": "/restaurants/images/"+foodSource.lower() + "/" + foodImage,
         "restaurant": foodSource,
         "group": foodType,
