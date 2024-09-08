@@ -1366,7 +1366,20 @@
         "image": "/restaurants/images/wendys/davesSingle.png",
         "restaurant": "Wendys",
         "group": "main",
-        "reviews": [],
+        "reviews": [
+            {
+                "title": "Classic and satisfying",
+                "content": "A well-balanced burger with juicy beef and fresh toppings.",
+                "author": "Tony Song",
+                "authorPhoto": "/images/tonySong.jpg"
+            },
+            {
+                "title": "Just okay",
+                "content": "The burger was decent but not extraordinary.",
+                "author": "Andrew Zhao",
+                "authorPhoto": "/images/andrewZhao.jpg"
+            }
+        ],
         "scores": {
             "flavor": 80,
             "balance": 70,
