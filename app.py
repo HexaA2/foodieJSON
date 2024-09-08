@@ -91,7 +91,7 @@ def foodForm():
     food_data = {
         "id": get_next_id("json/foodData.json"),
         "name": foodName,
-        "calories": foodCal,
+        "calories": int(foodCal),
         "price": float(foodPrice),
         "image": "/restaurants/images/"+foodSource.lower() + "/" + foodImage,
         "restaurant": foodSource,

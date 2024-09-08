@@ -1361,7 +1361,7 @@
     {
         "id": 17,
         "name": "Dave's Single",
-        "calories": "590",
+        "calories": 590,
         "price": 6.59,
         "image": "/restaurants/images/wendys/davesSingle.png",
         "restaurant": "Wendys",
