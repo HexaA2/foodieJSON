@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script>
         let highlightCount = 0; // Counter for the number of highlights
 
@@ -16,21 +17,21 @@
             const container = document.getElementById('highlights');
             const index = highlightCount;
             const html = `
-                <div>
+                <div class="highlight-container">
                     <h4>Highlight ${index + 1}</h4>
                     <label for="highlight_name_${index}">Name:</label>
-                    <input type="text" id="highlight_name_${index}" name="highlight_name"><br>
+                    <input type="text" id="highlight_name_${index}" name="highlight_name" class="input-field"><br>
 
                     <label for="highlight_item_id_${index}">Item ID:</label>
-                    <input type="text" id="highlight_item_id_${index}" name="highlight_item_id"><br>
+                    <input type="text" id="highlight_item_id_${index}" name="highlight_item_id" class="input-field"><br>
 
                     <label for="highlight_image_${index}">Name of image file (with file extension):</label>
-                    <input type="text" id="highlight_image_${index}" name="highlight_image"><br>
+                    <input type="text" id="highlight_image_${index}" name="highlight_image" class="input-field"><br>
 
                     <label for="highlight_description_${index}">Description:</label>
-                    <textarea id="highlight_description_${index}" name="highlight_description"></textarea><br>
+                    <textarea id="highlight_description_${index}" name="highlight_description" class="textarea-field"></textarea><br>
 
-                    <button type="button" onclick="removeHighlight(this)">Remove Highlight</button><br>
+                    <button type="button" class="remove-btn" onclick="removeHighlight(this)">Remove Highlight</button><br>
                 </div>
             `;
             container.insertAdjacentHTML('beforeend', html);
@@ -44,28 +45,30 @@
     </script>
 </head>
 <body>
-    <h1>Restaurant Form</h1>
-    <form action="{{ url_for('restaurant_form') }}" method="post">
-        <label for="id">ID (all lowercase no punctuation or spaces):</label>
-        <input type="text" id="id" name="id" required><br>
+    <div class="form-container">
+        <h1>Restaurant Form</h1>
+        <form action="{{ url_for('restaurant_form') }}" method="post">
+            <label for="id">ID (all lowercase, no punctuation or spaces):</label>
+            <input type="text" id="id" name="id" class="input-field" required><br>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="input-field" required><br>
 
-        <label for="image">Name of image file (with file extension):</label>
-        <input type="text" id="image" name="image" required><br>
+            <label for="image">Name of image file (with file extension):</label>
+            <input type="text" id="image" name="image" class="input-field" required><br>
 
-        <label for="background">Background Information:</label>
-        <textarea id="background" name="background" required></textarea><br>
+            <label for="background">Background Information:</label>
+            <textarea id="background" name="background" class="textarea-field" required></textarea><br>
 
-        <!-- Highlights -->
-        <h3>Highlights</h3>
-        <div id="highlights">
-            <!-- JavaScript will add highlights here -->
-        </div>
-        <button type="button" onclick="addHighlight()">Add Highlight</button><br>
+            <!-- Highlights -->
+            <h3>Highlights</h3>
+            <div id="highlights" class="highlights-container">
+                <!-- JavaScript will add highlights here -->
+            </div>
+            <button type="button" class="add-btn" onclick="addHighlight()">Add Highlight</button><br>
 
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

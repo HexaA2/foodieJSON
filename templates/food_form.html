@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script>
         function addReview() {
             const container = document.getElementById('reviews');
             const index = container.children.length;
             const html = `
-                <div>
+                <div class="review-container">
                     <label for="review_title_${index}">Review Title:</label>
-                    <input type="text" id="review_title_${index}" name="review_title"><br>
+                    <input type="text" id="review_title_${index}" name="review_title" class="input-field"><br>
 
                     <label for="review_content_${index}">Review:</label>
-                    <textarea id="review_content_${index}" name="review_content"></textarea><br>
+                    <textarea id="review_content_${index}" name="review_content" class="textarea-field"></textarea><br>
 
                     <label for="review_author_${index}">Author:</label>
-                    <input type="text" id="review_author_${index}" name="review_author"><br>
+                    <input type="text" id="review_author_${index}" name="review_author" class="input-field"><br>
 
                     <label for="review_author_image_${index}">Author (camelcase):</label>
-                    <input type="text" id="review_author_image_${index}" name="review_author_image"><br>
+                    <input type="text" id="review_author_image_${index}" name="review_author_image" class="input-field"><br>
 
-                    <button type="button" onclick="removeElement(this)">Remove Review</button><br>
+                    <button type="button" class="remove-btn" onclick="removeElement(this)">Remove Review</button><br>
                 </div>
             `;
             container.insertAdjacentHTML('beforeend', html);
@@ -32,14 +33,14 @@
             const container = document.getElementById('nutrients');
             const index = container.children.length;
             const html = `
-                <div>
+                <div class="nutrient-container">
                     <label for="nutrient_${index}">Nutrient:</label>
-                    <input type="text" id="nutrient_${index}" name="nutrient"><br>
+                    <input type="text" id="nutrient_${index}" name="nutrient" class="input-field"><br>
 
                     <label for="nutrient_value_${index}">Value (with units):</label>
-                    <input type="text" id="nutrient_value_${index}" name="nutrient_value"><br>
+                    <input type="text" id="nutrient_value_${index}" name="nutrient_value" class="input-field"><br>
 
-                    <button type="button" onclick="removeElement(this)">Remove Nutrient</button><br>
+                    <button type="button" class="remove-btn" onclick="removeElement(this)">Remove Nutrient</button><br>
                 </div>
             `;
             container.insertAdjacentHTML('beforeend', html);
@@ -49,14 +50,14 @@
             const container = document.getElementById('ingredients');
             const index = container.children.length;
             const html = `
-                <div>
+                <div class="ingredient-container">
                     <label for="ingredient_${index}">Ingredient:</label>
-                    <input type="text" id="ingredient_${index}" name="ingredient"><br>
+                    <input type="text" id="ingredient_${index}" name="ingredient" class="input-field"><br>
 
                     <label for="ingredient_details_${index}">Details:</label>
-                    <input type="text" id="ingredient_details_${index}" name="ingredient_details"><br>
+                    <input type="text" id="ingredient_details_${index}" name="ingredient_details" class="input-field"><br>
 
-                    <button type="button" onclick="removeElement(this)">Remove Ingredient</button><br>
+                    <button type="button" class="remove-btn" onclick="removeElement(this)">Remove Ingredient</button><br>
                 </div>
             `;
             container.insertAdjacentHTML('beforeend', html);
@@ -66,11 +67,11 @@
             const container = document.getElementById('allergens');
             const index = container.children.length;
             const html = `
-                <div>
+                <div class="allergen-container">
                     <label for="allergen_${index}">Allergen (Capitalize first letter):</label>
-                    <input type="text" id="allergen_${index}" name="allergen"><br>
+                    <input type="text" id="allergen_${index}" name="allergen" class="input-field"><br>
 
-                    <button type="button" onclick="removeElement(this)">Remove Allergen</button><br>
+                    <button type="button" class="remove-btn" onclick="removeElement(this)">Remove Allergen</button><br>
                 </div>
             `;
             container.insertAdjacentHTML('beforeend', html);
@@ -82,75 +83,77 @@
     </script>
 </head>
 <body>
-    <h1>Food Form</h1>
-    <form action="{{ url_for('food_form') }}" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
+    <div class="form-container">
+        <h1>Food Form</h1>
+        <form action="{{ url_for('food_form') }}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="input-field" required><br>
 
-        <label for="image">Name of image file (with file extension):</label>
-        <input type="text" id="image" name="image" required><br>
+            <label for="image">Name of image file (with file extension):</label>
+            <input type="text" id="image" name="image" class="input-field" required><br>
 
-        <label for="source">Restaurant (no punctuation or spaces):</label>
-        <input type="text" id="source" name="source" required><br>
+            <label for="source">Restaurant (no punctuation or spaces):</label>
+            <input type="text" id="source" name="source" class="input-field" required><br>
 
-        <label for="type">Type (main, side, beverage, dessert):</label>
-        <input type="text" id="type" name="type" required><br>
+            <label for="type">Type (main, side, beverage, dessert):</label>
+            <input type="text" id="type" name="type" class="input-field" required><br>
 
-        <label for="calories">Calories:</label>
-        <input type="number" id="calories" name="calories" required><br>
+            <label for="calories">Calories:</label>
+            <input type="number" id="calories" name="calories" class="input-field" required><br>
 
-        <label for="price">Price (no dollar sign):</label>
-        <input type="number" id="price" name="price" step="0.01" required><br>
+            <label for="price">Price (no dollar sign):</label>
+            <input type="number" id="price" name="price" class="input-field" step="0.01" required><br>
 
-        <!-- Reviews -->
-        <h3>Reviews</h3>
-        <div id="reviews">
-            <!-- JavaScript will add reviews here -->
-        </div>
-        <button type="button" onclick="addReview()">Add Review</button><br>
+            <!-- Reviews -->
+            <h3>Reviews</h3>
+            <div id="reviews" class="reviews-container">
+                <!-- JavaScript will add reviews here -->
+            </div>
+            <button type="button" class="add-btn" onclick="addReview()">Add Review</button><br>
 
-        <!-- Scores -->
-        <h3>Scores</h3>
-        <label for="flavor">Flavor:</label>
-        <input type="number" id="flavor" name="flavor" step="0.1" required><br>
+            <!-- Scores -->
+            <h3>Scores</h3>
+            <label for="flavor">Flavor:</label>
+            <input type="number" id="flavor" name="flavor" class="input-field" step="0.1" required><br>
 
-        <label for="balance">Balance:</label>
-        <input type="number" id="balance" name="balance" step="0.1" required><br>
+            <label for="balance">Balance:</label>
+            <input type="number" id="balance" name="balance" class="input-field" step="0.1" required><br>
 
-        <label for="intensity">Intensity:</label>
-        <input type="number" id="intensity" name="intensity" step="0.1" required><br>
+            <label for="intensity">Intensity:</label>
+            <input type="number" id="intensity" name="intensity" class="input-field" step="0.1" required><br>
 
-        <label for="aftertaste">Aftertaste:</label>
-        <input type="number" id="aftertaste" name="aftertaste" step="0.1" required><br>
+            <label for="aftertaste">Aftertaste:</label>
+            <input type="number" id="aftertaste" name="aftertaste" class="input-field" step="0.1" required><br>
 
-        <label for="texture">Texture:</label>
-        <input type="number" id="texture" name="texture" step="0.1" required><br>
+            <label for="texture">Texture:</label>
+            <input type="number" id="texture" name="texture" class="input-field" step="0.1" required><br>
 
-        <label for="appearance">Appearance:</label>
-        <input type="number" id="appearance" name="appearance" step="0.1" required><br>
+            <label for="appearance">Appearance:</label>
+            <input type="number" id="appearance" name="appearance" class="input-field" step="0.1" required><br>
 
-        <!-- Nutrition -->
-        <h3>Nutrition</h3>
-        <div id="nutrients">
-            <!-- JavaScript will add nutrients here -->
-        </div>
-        <button type="button" onclick="addNutrient()">Add Nutrient</button><br>
+            <!-- Nutrition -->
+            <h3>Nutrition</h3>
+            <div id="nutrients" class="nutrients-container">
+                <!-- JavaScript will add nutrients here -->
+            </div>
+            <button type="button" class="add-btn" onclick="addNutrient()">Add Nutrient</button><br>
 
-        <!-- Allergens -->
-        <h3>Allergens</h3>
-        <div id="allergens">
-            <!-- JavaScript will add allergens here -->
-        </div>
-        <button type="button" onclick="addAllergen()">Add Allergen</button><br>
+            <!-- Allergens -->
+            <h3>Allergens</h3>
+            <div id="allergens" class="allergens-container">
+                <!-- JavaScript will add allergens here -->
+            </div>
+            <button type="button" class="add-btn" onclick="addAllergen()">Add Allergen</button><br>
 
-        <!-- Ingredients -->
-        <h3>Ingredients</h3>
-        <div id="ingredients">
-            <!-- JavaScript will add ingredients here -->
-        </div>
-        <button type="button" onclick="addIngredient()">Add Ingredient</button><br>
+            <!-- Ingredients -->
+            <h3>Ingredients</h3>
+            <div id="ingredients" class="ingredients-container">
+                <!-- JavaScript will add ingredients here -->
+            </div>
+            <button type="button" class="add-btn" onclick="addIngredient()">Add Ingredient</button><br>
 
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

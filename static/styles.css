@@ -1,0 +1,147 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    padding: 2rem 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Button styles for index page */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #0a2050;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #163a82;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form container styles */
+.form-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: 2rem 0; /* Adds space around the form */
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.input-field, textarea {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.textarea-field {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.paragraph-container {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+/* Add Paragraph and Remove buttons for form */
+.add-btn {
+    background-color: #0a2050;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.add-btn:hover {
+    background-color: #163a82;
+}
+
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+/* Ensure the page can scroll */
+html, body {
+    height: auto; /* Allows page to expand beyond the initial viewport */
+    overflow-y: auto;
+}

@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script>
         function addParagraph() {
             const container = document.getElementById('paragraphs');
             const index = container.children.length;
             const html = `
-                <div>
+                <div class="paragraph-container">
                     <label for="paragraph_${index}">Paragraph Content:</label>
-                    <textarea id="paragraph_${index}" name="paragraph"></textarea><br>
+                    <textarea id="paragraph_${index}" name="paragraph" rows="4" required></textarea><br>
 
-                    <button type="button" onclick="removeElement(this)">Remove Paragraph</button><br>
+                    <button type="button" class="remove-btn" onclick="removeElement(this)">Remove Paragraph</button><br>
                 </div>
             `;
             container.insertAdjacentHTML('beforeend', html);
@@ -25,27 +26,29 @@
     </script>
 </head>
 <body>
-    <h1>Blog Form</h1>
-    <form action="{{ url_for('blog_form') }}" method="post">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br>
+    <div class="form-container">
+        <h1>Blog Form</h1>
+        <form action="{{ url_for('blog_form') }}" method="post" class="form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" class="input-field" required><br>
 
-        <label for="image">Name of image file (with file extension):</label>
-        <input type="text" id="image" name="image" required><br>
+            <label for="image">Name of image file (with file extension):</label>
+            <input type="text" id="image" name="image" class="input-field" required><br>
 
-        <label for="author">Author Name:</label>
-        <input type="text" id="author" name="author" required><br>
+            <label for="author">Author Name:</label>
+            <input type="text" id="author" name="author" class="input-field" required><br>
 
-        <label for="author_image">Author (camelcase):</label>
-        <input type="text" id="author_image" name="author_image" required><br>
+            <label for="author_image">Author (camelcase):</label>
+            <input type="text" id="author_image" name="author_image" class="input-field" required><br>
 
-        <h3>Content</h3>
-        <div id="paragraphs">
-            <!-- JavaScript will add paragraphs here -->
-        </div>
-        <button type="button" onclick="addParagraph()">Add Paragraph</button><br>
+            <h3>Content</h3>
+            <div id="paragraphs" class="paragraphs-container">
+                <!-- JavaScript will add paragraphs here -->
+            </div>
+            <button type="button" class="add-btn" onclick="addParagraph()">Add Paragraph</button><br>
 
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
