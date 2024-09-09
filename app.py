@@ -147,7 +147,7 @@ def restaurant_form():
             })
 
         rest_data = {
-            "id": id,
+            "id": int(id),
             "name": name,
             "image": "/images/" + image,
             "background": background,

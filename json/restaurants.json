@@ -46,7 +46,7 @@
         "highlights": [
             {
                 "name": "Baconator",
-                "id": "4",
+                "id": 4,
                 "image": "/restaurants/images/mcdonalds/baconator",
                 "description": "not even mcdonalds"
             }
