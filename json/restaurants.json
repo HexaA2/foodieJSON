@@ -37,19 +37,5 @@
         "image": "/images/burgerking.png",
         "background": "Burger King, founded in 1954 in Miami, Florida, is one of the world\u2019s leading fast-food chains, renowned for its flame-grilled burgers and iconic Whopper sandwich. Established by James McLamore and David Edgerton, the brand has grown from a small regional operation into a global phenomenon with thousands of locations across numerous countries. Known for its innovative approach to fast food, Burger King has consistently introduced unique menu items and promotions, catering to a diverse customer base. The company\u2019s commitment to quality and customer satisfaction, along with its distinct \"Have It Your Way\" slogan, has solidified its position as a major player in the fast-food industry.",
         "highlights": []
-    },
-    {
-        "id": "mcdonalds",
-        "name": "McDonalds",
-        "image": "/images/mcdonalds.png",
-        "background": "Cool",
-        "highlights": [
-            {
-                "name": "Baconator",
-                "id": 4,
-                "image": "/restaurants/images/mcdonalds/baconator.png",
-                "description": "asdasd"
-            }
-        ]
     }
 ]
