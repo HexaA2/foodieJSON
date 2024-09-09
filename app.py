@@ -1,200 +1,169 @@
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import json
-
-def get_next_id(file_path):
-    try:
-        # Read the existing data
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-        
-        # Initialize IDs list
-        ids = []
-        
-        # Check if data is a list of items
-        if isinstance(data, list):
-            # Extract IDs from existing items
-            ids = [item.get("id") for item in data if item.get("id") is not None]
-        
-        # Get the maximum ID and increment by 1
-        max_id = max(ids) if ids else 0
-        next_id = max_id + 1
-        
-        return next_id
-    
-    except FileNotFoundError:
-        # File does not exist; start with ID 1
-        return 1
-
-def foodForm():
-    print("You have selected the food form.")
-    foodName = input("Name > ")
-    foodImage = input("Name of image file (with file extension) > ")
-    foodSource = input("Restaurant (no punctuation or spaces)> ")
-    foodType = input("Type (main, side, beverage, dessert)> ")
-    foodCal = input("Calories > ")
-    foodPrice = input("Price (no dollar sign)> ")
-
-    print("Moving onto reviews.")
-    reviews = []
-    while True:
-        more = input("Would you like to add more reviews? (y/n) > ")
-        if more=="n":
-            break
-        title = input("Review Title > ")
-        content = input("Review > ")
-        author = input("Author > ")
-        authorPhoto = "/images" + input("Author (camelcase) > ") + ".jpg"
-        reviews.append({"title": title, "content": content, "author": author, "authorPhoto": authorPhoto})
-        
-
-    print("Moving onto scores.")
-
-    flavor = float(input("Flavor > "))
-    balance = float(input("Balance > "))
-    intensity = float(input("Intensity > "))
-    aftertaste = float(input("Aftertaste > "))
-    texture = float(input("Texture > "))
-    appearance = float(input("Appearance > "))
-    overallScore = (flavor + balance + intensity + aftertaste + texture + appearance) / 6
-
-    print("Moving onto Nutrition.")
-    nutrition = {}
-    while True:
-        more = input("Would you like to add more nutrients? (y/n) > ")
-        if more=="n":
-            break
-        nutrient = input("Enter a nutrient > ")
-        value = input("Enter nutrient value (with units) > ")
-        nutrition[nutrient] = value
-        
-    
-    print("Moving onto Allergens")
-    print("Examples: egg, milk, sesame, soy, wheat")
-    allergens = []
-    while True:
-        more = input("Would you like to add more allergens? (y/n) > ")
-        if more=="n":
-            break
-        allergen = input("Enter an allergen (Capitalize first letter) > ")
-        allergens.append({"name": allergen, "icon": "/images/"+allergen.lower()+".svg"})
-        
-
-    print("Moving onto Ingredients")
-    ingredients = []
-    while True:
-        more = input("Would you like to add more ingredients? (y/n) > ")
-        if more=="n":
-            break
-        ingredient = input("Enter an ingredient > ")
-        details = input("Enter ingredient details > ")
-        ingredients.append({"name": ingredient, "details": details})
-
-    food_data = {
-        "id": get_next_id("json/foodData.json"),
-        "name": foodName,
-        "calories": int(foodCal),
-        "price": float(foodPrice),
-        "image": "/restaurants/images/"+foodSource.lower() + "/" + foodImage,
-        "restaurant": foodSource,
-        "group": foodType,
-        "reviews": reviews,
-        "scores": {
-            "flavor": flavor,
-            "balance": balance,
-            "intensity": intensity,
-            "aftertaste": aftertaste,
-            "texture": texture,
-            "appearance": appearance,
-            "overallScore": overallScore
-        },
-        "nutrition": nutrition,
-        "allergens": allergens,
-        "ingredients": ingredients
-    }
-
-    with open("json/foodData.json", 'r') as file:
-        data = json.load(file)
-    data.append(food_data)
-
-    with open("json/foodData.json", 'w') as file:
-        json.dump(data, file, indent=4)
-
 from datetime import datetime
 
-def blogForm():
-    print("You have selected the blog form.")
-    title = input("Title > ")
-    image = input("Name of image file (with file extension) > ")
-    author = input("Author Name > ")
-    authorImage = "/images/" + input("Author (camelcase) > ") + ".jpg"
-    date = datetime.now().date().strftime('%Y-%m-%d')
+app = Flask(__name__)
 
-    print("Moving onto text.")
-    text = []
-    while True:
-        more = input("Would you like to add more pargraphs? (y/n) > ")
-        if more=="n":
-            break
-        content = input("Paragraph Content > ")
-        text.append(content)
+# Utility function to get the next ID
+def get_next_id(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+        ids = [item.get("id") for item in data if item.get("id") is not None]
+        max_id = max(ids) if ids else 0
+        return max_id + 1
+    except FileNotFoundError:
+        return 1
 
-    blog_data = {
-        "id": get_next_id("json/blog.json"),
-        "title": title,
-        "image": "/images/userBlogs/" + image,
-        "author": author,
-        "authorImage": authorImage,
-        "date": date,
-        "text": text
-    }
+# Route for the home page
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    with open("json/blog.json", 'r') as file:
-        data = json.load(file)
-    data.append(blog_data)
+# Route for food form
+@app.route('/food', methods=['GET', 'POST'])
+def food_form():
+    if request.method == 'POST':
+        # Collecting form data
+        foodName = request.form['name']
+        foodImage = request.form['image']
+        foodSource = request.form['source']
+        foodType = request.form['type']
+        foodCal = request.form['calories']
+        foodPrice = request.form['price']
 
-    with open("json/blog.json", 'w') as file:
-        json.dump(data, file, indent=4)
+        reviews = []
+        review_titles = request.form.getlist('review_title')
+        review_contents = request.form.getlist('review_content')
+        review_authors = request.form.getlist('review_author')
+        review_author_photos = ["/images/" + author + ".jpg" for author in request.form.getlist('review_author_image')]
 
+        for i in range(len(review_titles)):
+            reviews.append({
+                "title": review_titles[i],
+                "content": review_contents[i],
+                "author": review_authors[i],
+                "authorPhoto": review_author_photos[i]
+            })
 
-def restaurantForm():
-    print("You have selected the restaurant form.")
-    id = input("id (all lowercase no punctuation or spaces) > ")
-    name = input("Name > ")
-    image = input("Name of image file (with file extension) > ")
-    background = input("Background Information > ")
-    highlights = []
-    count = 0
-    while count < 4:
-        more = input("Would you like to add a highlight? (y/n) > ")
-        if more=="n":
-            break
-        name = input("Name > ")
-        itemid = input("id of item > ")
-        image = input("Name of image file (with file extension) > ")
-        description = input("Description > ")
-        highlights.append({"name": name, "id": itemid, "image": "/restaurants/images/"+id+"/" + image, "description": description})
-        count +=1
+        scores = {
+            "flavor": float(request.form['flavor']),
+            "balance": float(request.form['balance']),
+            "intensity": float(request.form['intensity']),
+            "aftertaste": float(request.form['aftertaste']),
+            "texture": float(request.form['texture']),
+            "appearance": float(request.form['appearance']),
+            "overallScore": (float(request.form['flavor']) + float(request.form['balance']) +
+                             float(request.form['intensity']) + float(request.form['aftertaste']) +
+                             float(request.form['texture']) + float(request.form['appearance'])) / 6
+        }
 
-    rest_data = {
-        "id": id,
-        "name": name,
-        "image": "/images/" + image,
-        "background": background,
-        "highlights": highlights
-    }
+        nutrition = dict(zip(request.form.getlist('nutrient'), request.form.getlist('nutrient_value')))
 
-    with open("json/restaurants.json", 'r') as file:
-        data = json.load(file)
-    data.append(rest_data)
+        allergens = [{"name": allergen, "icon": "/images/" + allergen.lower() + ".svg"} for allergen in request.form.getlist('allergen')]
 
-    with open("json/restaurants.json", 'w') as file:
-        json.dump(data, file, indent=4)
-    
+        ingredients = [{"name": ingredient, "details": details} for ingredient, details in zip(request.form.getlist('ingredient'), request.form.getlist('ingredient_details'))]
 
-userChoice = input("Which form would you like to submit? food, restaurant, or blog? > ").lower()
-if userChoice=="food":
-    foodForm()
-elif userChoice=="restaurant":
-    restaurantForm()
-elif userChoice=="blog":
-    blogForm()
+        food_data = {
+            "id": get_next_id("json/foodData.json"),
+            "name": foodName,
+            "calories": int(foodCal),
+            "price": float(foodPrice),
+            "image": "/restaurants/images/" + foodSource.lower() + "/" + foodImage,
+            "restaurant": foodSource,
+            "group": foodType,
+            "reviews": reviews,
+            "scores": scores,
+            "nutrition": nutrition,
+            "allergens": allergens,
+            "ingredients": ingredients
+        }
 
+        with open("json/foodData.json", 'r') as file:
+            data = json.load(file)
+        data.append(food_data)
+
+        with open("json/foodData.json", 'w') as file:
+            json.dump(data, file, indent=4)
+
+        return redirect(url_for('index'))
+
+    return render_template('food_form.html')
+
+# Route for blog form
+@app.route('/blog', methods=['GET', 'POST'])
+def blog_form():
+    if request.method == 'POST':
+        title = request.form['title']
+        image = request.form['image']
+        author = request.form['author']
+        authorImage = "/images/" + request.form['author_image'] + ".jpg"
+        date = datetime.now().date().strftime('%Y-%m-%d')
+
+        text = request.form.getlist('paragraph')
+
+        blog_data = {
+            "id": get_next_id("json/blog.json"),
+            "title": title,
+            "image": "/images/userBlogs/" + image,
+            "author": author,
+            "authorImage": authorImage,
+            "date": date,
+            "text": text
+        }
+
+        with open("json/blog.json", 'r') as file:
+            data = json.load(file)
+        data.append(blog_data)
+
+        with open("json/blog.json", 'w') as file:
+            json.dump(data, file, indent=4)
+
+        return redirect(url_for('index'))
+
+    return render_template('blog_form.html')
+
+# Route for restaurant form
+@app.route('/restaurant', methods=['GET', 'POST'])
+def restaurant_form():
+    if request.method == 'POST':
+        id = request.form['id']
+        name = request.form['name']
+        image = request.form['image']
+        background = request.form['background']
+
+        highlights = []
+        highlight_names = request.form.getlist('highlight_name')
+        highlight_item_ids = request.form.getlist('highlight_item_id')
+        highlight_images = ["/restaurants/images/" + id + "/" + img for img in request.form.getlist('highlight_image')]
+        highlight_descriptions = request.form.getlist('highlight_description')
+
+        for i in range(len(highlight_names)):
+            highlights.append({
+                "name": highlight_names[i],
+                "id": highlight_item_ids[i],
+                "image": highlight_images[i],
+                "description": highlight_descriptions[i]
+            })
+
+        rest_data = {
+            "id": id,
+            "name": name,
+            "image": "/images/" + image,
+            "background": background,
+            "highlights": highlights
+        }
+
+        with open("json/restaurants.json", 'r') as file:
+            data = json.load(file)
+        data.append(rest_data)
+
+        with open("json/restaurants.json", 'w') as file:
+            json.dump(data, file, indent=4)
+
+        return redirect(url_for('index'))
+
+    return render_template('restaurant_form.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)

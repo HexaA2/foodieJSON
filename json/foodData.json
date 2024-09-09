@@ -1357,5 +1357,61 @@
                 "details": "Flavoring."
             }
         ]
+    },
+    {
+        "id": 17,
+        "name": "Burger King",
+        "calories": 2,
+        "price": 999.99,
+        "image": "/restaurants/images/wendys/baconator.png",
+        "restaurant": "Wendys",
+        "group": "main",
+        "reviews": [
+            {
+                "title": "help",
+                "content": "help",
+                "author": "Tony SOng",
+                "authorPhoto": "/images/tonySong.jpg"
+            },
+            {
+                "title": "hiseg",
+                "content": "ewhiwugeg",
+                "author": "Andrew Zhao",
+                "authorPhoto": "/images/andrewZhao.jpg"
+            }
+        ],
+        "scores": {
+            "flavor": 90.0,
+            "balance": 90.0,
+            "intensity": 90.0,
+            "aftertaste": 9.0,
+            "texture": 9.0,
+            "appearance": 1.0,
+            "overallScore": 48.166666666666664
+        },
+        "nutrition": {
+            "fat": "27g",
+            "giant": "99g"
+        },
+        "allergens": [
+            {
+                "name": "Egg",
+                "icon": "/images/egg.svg"
+            },
+            {
+                "name": "Soy",
+                "icon": "/images/soy.svg"
+            }
+        ],
+        "ingredients": [
+            {
+                "name": "Beef",
+                "details": "Patty"
+            },
+            {
+                "name": "Lettuce",
+                "details": "Leaf"
+            }
+        ]
     }
 ]

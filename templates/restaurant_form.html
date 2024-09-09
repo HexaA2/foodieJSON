@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Form</title>
+    <script>
+        let highlightCount = 0; // Counter for the number of highlights
+
+        function addHighlight() {
+            if (highlightCount >= 4) {
+                alert("You can only add up to 4 highlights.");
+                return;
+            }
+
+            const container = document.getElementById('highlights');
+            const index = highlightCount;
+            const html = `
+                <div>
+                    <h4>Highlight ${index + 1}</h4>
+                    <label for="highlight_name_${index}">Name:</label>
+                    <input type="text" id="highlight_name_${index}" name="highlight_name"><br>
+
+                    <label for="highlight_item_id_${index}">Item ID:</label>
+                    <input type="text" id="highlight_item_id_${index}" name="highlight_item_id"><br>
+
+                    <label for="highlight_image_${index}">Name of image file (with file extension):</label>
+                    <input type="text" id="highlight_image_${index}" name="highlight_image"><br>
+
+                    <label for="highlight_description_${index}">Description:</label>
+                    <textarea id="highlight_description_${index}" name="highlight_description"></textarea><br>
+
+                    <button type="button" onclick="removeHighlight(this)">Remove Highlight</button><br>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+            highlightCount++;
+        }
+
+        function removeHighlight(button) {
+            button.parentElement.remove();
+            highlightCount--;
+        }
+    </script>
+</head>
+<body>
+    <h1>Restaurant Form</h1>
+    <form action="{{ url_for('restaurant_form') }}" method="post">
+        <label for="id">ID (all lowercase no punctuation or spaces):</label>
+        <input type="text" id="id" name="id" required><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="image">Name of image file (with file extension):</label>
+        <input type="text" id="image" name="image" required><br>
+
+        <label for="background">Background Information:</label>
+        <textarea id="background" name="background" required></textarea><br>
+
+        <!-- Highlights -->
+        <h3>Highlights</h3>
+        <div id="highlights">
+            <!-- JavaScript will add highlights here -->
+        </div>
+        <button type="button" onclick="addHighlight()">Add Highlight</button><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
