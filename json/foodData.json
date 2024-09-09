@@ -1381,12 +1381,12 @@
             }
         ],
         "scores": {
-            "flavor": 90.0,
-            "balance": 90.0,
-            "intensity": 90.0,
-            "aftertaste": 9.0,
-            "texture": 9.0,
-            "appearance": 1.0,
+            "flavor": 90,
+            "balance": 90,
+            "intensity": 90,
+            "aftertaste": 9,
+            "texture": 9,
+            "appearance": 1,
             "overallScore": 48.166666666666664
         },
         "nutrition": {
