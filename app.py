@@ -137,7 +137,7 @@ def restaurant_form():
 
         highlights = []
         highlight_names = request.form.getlist('highlight_name')
-        highlight_item_ids = request.form.getlist('highlight_item_id')
+        highlight_item_ids = [int(iid) for iid in request.form.getlist('highlight_item_id')]
         highlight_images = ["/restaurants/images/" + id + "/" + img for img in request.form.getlist('highlight_image')]
         highlight_descriptions = request.form.getlist('highlight_description')
 
@@ -150,7 +150,7 @@ def restaurant_form():
             })
 
         rest_data = {
-            "id": int(id),
+            "id": id,
             "name": name,
             "image": "/images/" + image,
             "background": background,
