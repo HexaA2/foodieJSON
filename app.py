@@ -47,15 +47,15 @@ def food_form():
             })
 
         scores = {
-            "flavor": float(request.form['flavor']),
-            "balance": float(request.form['balance']),
-            "intensity": float(request.form['intensity']),
-            "aftertaste": float(request.form['aftertaste']),
-            "texture": float(request.form['texture']),
-            "appearance": float(request.form['appearance']),
-            "overallScore": (float(request.form['flavor']) + float(request.form['balance']) +
-                             float(request.form['intensity']) + float(request.form['aftertaste']) +
-                             float(request.form['texture']) + float(request.form['appearance'])) / 6
+            "flavor": int(request.form['flavor']),
+            "balance": int(request.form['balance']),
+            "intensity": int(request.form['intensity']),
+            "aftertaste": int(request.form['aftertaste']),
+            "texture": int(request.form['texture']),
+            "appearance": int(request.form['appearance']),
+            "overallScore": (int(request.form['flavor']) + int(request.form['balance']) +
+                             int(request.form['intensity']) + int(request.form['aftertaste']) +
+                             int(request.form['texture']) + int(request.form['appearance'])) / 6
         }
 
         nutrition = dict(zip(request.form.getlist('nutrient'), request.form.getlist('nutrient_value')))
