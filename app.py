@@ -53,10 +53,12 @@ def food_form():
             "aftertaste": int(request.form['aftertaste']),
             "texture": int(request.form['texture']),
             "appearance": int(request.form['appearance']),
-            "overallScore": (int(request.form['flavor']) + int(request.form['balance']) +
+            
+        }
+
+        overallScore = (int(request.form['flavor']) + int(request.form['balance']) +
                              int(request.form['intensity']) + int(request.form['aftertaste']) +
                              int(request.form['texture']) + int(request.form['appearance'])) / 6
-        }
 
         nutrition = dict(zip(request.form.getlist('nutrient'), request.form.getlist('nutrient_value')))
 
@@ -74,6 +76,7 @@ def food_form():
             "group": foodType,
             "reviews": reviews,
             "scores": scores,
+            "overallScore": overallScore,
             "nutrition": nutrition,
             "allergens": allergens,
             "ingredients": ingredients
